@@ -6,29 +6,22 @@ use Illuminate\Support\Facades\Schema;
 
 class AddLevelIdToUsers extends Migration
 {
-    /**
-     * Run the migrations.
-     *
-     * @return void
-     */
+
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
+            
             $table->unsignedBigInteger('level_id')->nullable()->after('id');
 
             $table->foreign('level_id')
-                ->references('id')
-                ->on('levels')
-                ->onDelete('set null')
-                ->onUpdate('cascade');
+                 ->references('id')
+                 ->on('levels')
+                 ->onDelete('set null')
+                 ->onUpdate('cascade');
         });
     }
 
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
+    
     public function down()
     {
         Schema::table('users', function (Blueprint $table) {

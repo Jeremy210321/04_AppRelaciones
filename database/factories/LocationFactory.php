@@ -2,20 +2,19 @@
 
 namespace Database\Factories;
 
-use App\Models\Group;
+use App\Models\Location;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
-class GroupFactory extends Factory
+class LocationFactory extends Factory
 {
 
-    protected $model = Group::class;
+    protected $model = Location::class;
 
 
     public function definition()
     {
         return [
-            
-            'nombre'=> $this->faker->name
+            'pais'=> $this->faker->country
         ];
     }
 }

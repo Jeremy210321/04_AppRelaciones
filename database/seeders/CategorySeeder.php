@@ -2,14 +2,14 @@
 
 namespace Database\Seeders;
 
-use App\Models\Group;
+use App\Models\Category;
 use Illuminate\Database\Seeder;
 
-class GroupSeeder extends Seeder
+class CategorySeeder extends Seeder
 {
 
     public function run()
     {
-        Group::factory()->count(3)->create();
+        Category::factory()->count(4)->create();
     }
 }
